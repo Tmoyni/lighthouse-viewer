@@ -1,6 +1,5 @@
 import '../App.css';
 import ImageReport from './ImageReport'
-import ReportViewer from 'react-lighthouse-viewer';
 import React from 'react';
 
 // let jsonReport = this.props.allJsonOld[Object.keys(allJsonOld)[0]];

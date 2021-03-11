@@ -1,5 +1,4 @@
 import '../App.css';
-import ImageReport from './ImageReport'
 import ReportViewer from 'react-lighthouse-viewer';
 import React from 'react';
 
@@ -23,7 +22,6 @@ class ReportsList extends React.Component {
   }
 
   handleClick(value) {
-    console.log("clicked", this.state)
     this.setState(state => ({
       jsonClicked: true,
       jsonReport: value
@@ -41,7 +39,7 @@ class ReportsList extends React.Component {
           let name1 = key.split('snowehome_com_')[1]
           name = name1.split('.report')[0].split('_').join('/')
         }
-        return <li key={i} onClick={() => this.handleClick(value)}>{name}</li>
+        return <p key={i} onClick={() => this.handleClick(value)}>{name}</p>
       } else return ""
 
     })
@@ -54,7 +52,7 @@ class ReportsList extends React.Component {
           let name1 = key.split('snowehome_com_')[1]
           name = name1.split('.report')[0].split('_').join('/')
         }
-        return <li key={i} onClick={() => this.handleClick(value)}>{name}</li>
+        return <p key={i} onClick={() => this.handleClick(value)}>{name}</p>
       } else return ""    
     })
 
