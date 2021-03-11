@@ -1,38 +1,121 @@
 .App {
-  text-align: center;
+  min-height: 100vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.container {
+  text-align: left;
+  margin: 1rem 2rem;
+  background-color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  color: black;
+  max-width: 900px;
+}
+
+.left {
+  width: 50%;
+  max-width: 450px}
+
+.right {
+  width: 50%;
+  max-width: 450px
+}
+
+li {
+  font-size: 10px;
+}
+
+.urlTable {
+  display: block;
+  font-size: 10px;
+  table-layout: auto;
+  width: 100%;
+}
+thead tr th:nth-child(1) {
+  width: 5em;
+}
+
+thead tr th:nth-child(2) {
+  width: 20%;
+}
+
+thead tr th:nth-child(3) {
+  width: 7.5em;
+}
+
+tr:nth-child(even) {background: rgb(240, 240, 240)}
+tr:nth-child(odd) {background: #FFF}
+
+img {
+  width: 50px;
+}
+
+.images-info {
+  font-size: .5em;
+  margin: .25em 0;
+}
+
+p {
+  margin: .5em 0;
+  font-size: .75em;
+}
+
+h4 {
+  font-size: .6em;
+  margin: .25em 0 ;
+}
+
+.red {
+  color: red;
+  font-weight: bold
+}
+
+.green {
+  color: green;
+  font-weight: bold
+}
+
+.yellow {
+  color: orange;
+  font-weight: bold
+}
+
+.report-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: .5rem;
+}
+
+button {
+  margin-right: 1rem;
+  height: 1.5rem;
+  width: 4rem;
+  background-color: #404040;
   color: white;
+  border: none
 }
 
-.App-link {
-  color: #61dafb;
+.report {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.report-left {
+  margin-right: .5em;
+  width: 50%
+}
+
+.report-right {
+  margin-left: .5em;
+  width: 50%
 }

@@ -1,0 +1,140 @@
+
+run Lighthouse via a command line interface. 
+As a result it is running in the background and you can see much more details, check multiple URLs, you can customize your reports and safe lots of time.
+
+Preparation for running Lighthouse from the command line
+For running Google Lighthouse from the command line you only need 3 things:
+- Google Chrome
+- Make sure you have the newest version of Chrome installed.
+- Node JS
+
+Install Node.js LTS for Windows or Mac. The download includes also the NPM bundled. NPM is a package manager for JavaScript applications and allows installing Lighthouse for example.
+
+Lighthouse
+The final step is to install Google Lighthouse by Node.js.
+
+Please note the following tutorial is made for Windows users but also for Mac users is it possible to run Lighthouse from the command line.
+- Install Lighthouse by Node.js
+- Open the Windows command prompt .
+- Now the command prompt is open and you can install Lighthouse with the command below:
+
+npm install -g lighthouse
+
+For uninstall Lighthouse use the command below:
+
+npm uninstall -g lighthouse
+
+
+First Lighthouse Audit from command line
+First we start with a simple Lighthouse report to get into it.
+For to run a basic report, enter the following command:
+
+lighthouse "URL"
+
+EXAMPLE: lighthouse https://www.medium.com
+After you pressed enter the chrome browser will pop up and starts with the report.
+At the same time the command prompt will start listing what lighthouse is currently testing. When the report is done you’ll see a link to where the report has been saved. The Report is automatically saved as HTML.
+Furthermore the listing gives much more detailed insight into the website.
+
+## Advanced: Customizing Google Lighthouse Report
+
+Fo finding more features Google Lighthouse has a help function. It shows you a list of all available configuration options.
+To see the list insert the following command into the command prompt:
+
+lighthouse --help
+
+Underneath you’ll find the most useful options.
+Please note that generally the flags don’t need to be in a specific order.
+
+Output
+You can choose between three different formats
+* HTML (default)
+* JSON
+* CSV
+
+lighthouse <URL> --output format
+
+Example: lighthouse https://www.medium.com --output json 
+
+It is also possible to save two or all report formats
+
+Example: lighthouse https://www.medium.com --output json 
+--output html --output csv
+
+
+Output path and name
+Save your customized report to a specific folder and rename it.
+lighthouse <URL> --output-path <PATH><Name>
+
+Rename example:
+lighthouse https://www.medium.com --output-path ./test.html
+Result: Save report as test.html.
+
+Rename exaple:
+lighthouse https://www.medium.com --output json --output-path ./test.json
+Result: Save report as test.json.
+
+Output path and name example:
+lighthouse https://www.medium.com --output json --output-path "C:\Users\cgiezendanner\Desktop\test.json"
+Result: Save report to the specific folder as test.json.
+
+Headless, quiet and view
+When you request a report, the Chrome browser will open, and the command line log each part of the process.
+
+If you don’t want the Chrome browser pop-up you can use the following command:
+lighthouse <URL> --chrome-flags=”--headless”
+Example: lighthouse https://www.medium.com --chrome-flags=”--headless”
+
+If you want the report to run silently you can use the following command:
+lighthouse <URL> --quiet
+Example: lighthouse https://www.medium.com --quiet
+
+If you want headless and without log in command line:
+lighthouse https://www.medium.com --quiet --chrome-flags=”--headless”
+
+If you want to know your report has finshed you can add the following command:
+lighthouse <URL> --chrome-flags=”--headless” --quiet --view
+
+Example: lighthouse https://www.medium.com --chrome-flags=”--headless” --quiet --view
+With the “view” flag mention, your report opens in a chrome window once after it has finished running.
+
+Categories
+It is also possible to choose which categories you want to report on.
+Following categories are possible:
+Performance
+Accessibility
+Best Practices
+SEO
+PWA
+
+ligthhouse <URL> --only-categories=<category>
+Example: lighthouse https://www.medium.com --only-categories=SEO
+
+Example for multible categories:
+lighthouse https://www.medium.com --only-categories=SEO --only-categories=performance
+
+Multiple Website-Reports with Google Lighthouse
+So let’s save time and do reports for multiple websites with running batches of Lighthouse Reports on the command line.
+For the following steps create a folder for your Lighthouse Reports. After placing the two files below:
+Text file with URLs
+Create a text file with multiple URLs as shown below:
+Image for postImage for post
+
+Batch file
+Create a batch-file with your favourite text editor. Paste the following code into it:
+@For /F "UseBackQ Delims=" %%A In ("URL FROM YOUR TEXT-FILE"
+) Do @LightHouse "%%A" --quiet --chrome-flags="--headless"
+Please note that you can place as much flags as you want into the code. All flags, which you can see in the “lighthouse help” are working also with the batch file.
+
+Example for more flags:
+@For /F "UseBackQ Delims=" %%A In ("URL FROM YOUR TEXT-FILE"
+) Do @LightHouse "%%A" --quiet --chrome-flags="--headless" --view ----output-path "C:\Users\cgiezendanner\Desktop\test.json" --only-categories=performance
+Save the file as “.bat”. Now you should have a text and a batch file in your folder.
+Image for postImage for post
+Run the script
+Go back to the command prompt and navigate to the folder where the two files were saved.
+cd <Nav URL>
+Example with folder:
+cd C:\Users\cgiezendanner\Desktop\Lighthouse\dev
+All you should need to do now is running the command below:
+<name of batch-file>.bat
