@@ -19,9 +19,8 @@ You will also see any lint errors in the console.
 ## Creating Lighthouse Reports
 Lighthouse Reports are created using the Lighthouse CLI and Lighthouse Batch Reporter
 
-# 
 navigate to the src folder and run in the command line:
-bash report.sh
+```bash report.sh```
 
 CLI
 # Lighthouse Batch Reporter
