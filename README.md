@@ -19,13 +19,13 @@ You will also see any lint errors in the console.
 ## Creating Lighthouse Reports
 Lighthouse Reports are created using the Lighthouse CLI and Lighthouse Batch Reporter
 
-navigate to the src folder and run in the command line:
+navigate to the src folder and run in the command line:\
 `bash report.sh`
 
 CLI
 # Lighthouse Batch Reporter
-to install: `npm i lighthouse-batch`
-https://www.npmjs.com/package/lighthouse-batch
+to install: `npm i lighthouse-batch`\
+https://www.npmjs.com/package/lighthouse-batch\
 
 Example usage:
 
@@ -62,16 +62,16 @@ All options
 lighthouse-batch [options]
 
 Options:
-  -V, --version                 output the version number
-  -s, --sites [sites]           a comma delimited list of site urls to analyze with Lighthouse
-  -f, --file [path]             an input file with a site url per-line to analyze with Lighthouse
-  -p, --params <params>         extra parameters to pass to lighthouse cli for each execution e.g. -p "--perf --quiet"
-  -h, --html                    generate an html report alongside the json report
-  --csv                         generate a csv report alongside the json report
-  -o, --out [out]               the output folder to place reports, defaults to './report/lighthouse'
-  --score <threshold>           average score for each site to meet (1-100)
-  --accessibility <threshold>   accessibility score for each site to meet (1-100)
-  --best-practices <threshold>  best practices score for each site to meet (1-100)
+  -V, --version                 output the version number\
+  -s, --sites [sites]           a comma delimited list of site urls to analyze with Lighthouse\
+  -f, --file [path]             an input file with a site url per-line to analyze with Lighthouse\
+  -p, --params <params>         extra parameters to pass to lighthouse cli for each execution e.g. -p "--perf --quiet"\
+  -h, --html                    generate an html report alongside the json report\
+  --csv                         generate a csv report alongside the json report\
+  -o, --out [out]               the output folder to place reports, defaults to './report/lighthouse'\
+  --score <threshold>           average score for each site to meet (1-100)\
+  --accessibility <threshold>   accessibility score for each site to meet (1-100)\
+  --best-practices <threshold>  best practices score for each site to meet (1-100)\
   --seo <threshold>             seo score for each site to meet (1-100)
   --pwa <threshold>             pwa score for each site to meet (1-100)
   --fail-fast                   fail as soon as a budget threshold is not met
@@ -97,9 +97,9 @@ Logging:
   --quiet    Displays no progress, debug logs, or errors  [boolean] [default: false]
 
 Configuration:
-  --save-assets                  Save the trace contents & devtools logs to disk  [boolean] [default: false]
-  --list-all-audits              Prints a list of all available audits and exits  [boolean] [default: false]
-  --list-trace-categories        Prints a list of all required trace categories and exits  [boolean] [default: false]
+  --save-assets                  Save the trace contents & devtools logs to disk  [boolean] [default: false]\
+  --list-all-audits              Prints a list of all available audits and exits  [boolean] [default: false]\
+  --list-trace-categories        Prints a list of all required trace categories and exits  [boolean] [default: false]\
   --print-config                 Print the normalized config for the given config and options, then exit.  [boolean] [default: false]
   --additional-trace-categories  Additional categories to capture with the trace (comma-delimited).  [string]
   --config-path                  The path to the config JSON.
