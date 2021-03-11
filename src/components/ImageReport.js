@@ -2,8 +2,7 @@ import React from 'react';
 import '../App.css';
 
 
-class Report extends React.Component {
-  // console.log(props.info.audits['uses-responsive-images'])
+class ImageReport extends React.Component {
   constructor(props) {
     super(props);
     this.state = {isToggleOn: false};
@@ -38,7 +37,6 @@ class Report extends React.Component {
 
 
   render() {
-    console.log(this.props.secondReport)
 
     return (
       <div className="report">
@@ -131,4 +129,4 @@ class Report extends React.Component {
   }
 }
 
-export default Report;
+export default ImageReport;

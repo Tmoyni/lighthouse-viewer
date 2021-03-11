@@ -119,3 +119,8 @@ button {
   margin-left: .5em;
   width: 50%
 }
+
+.list-report {
+  display: flex;
+  flex-direction: row;
+}
