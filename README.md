@@ -210,3 +210,4 @@ lighthouse -GA=./gmailartifacts https://gmail.com
 
 
 
+# ligthouse-viewer
