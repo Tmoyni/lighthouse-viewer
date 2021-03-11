@@ -20,11 +20,11 @@ You will also see any lint errors in the console.
 Lighthouse Reports are created using the Lighthouse CLI and Lighthouse Batch Reporter
 
 navigate to the src folder and run in the command line:
-```bash report.sh```
+`bash report.sh`
 
 CLI
 # Lighthouse Batch Reporter
-to install: npm i lighthouse-batch
+to install: `npm i lighthouse-batch`
 https://www.npmjs.com/package/lighthouse-batch
 
 Example usage:
