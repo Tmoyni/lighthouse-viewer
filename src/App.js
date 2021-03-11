@@ -1,44 +1,81 @@
 import './App.css';
-import Report from './components/Report'
+import React from 'react';
+import ReportsContainer from './components/ReportsContainer'
+import ReportsList from './components/ReportsList'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
-//pull in all json files from a folder and add to allReports as an object
+// let jsonReport = allReports[Object.keys(allReports)[0]];
+// console.log(jsonReport)
+
+//pull in all json files from a folder and add to allJsonOld as an object
 const context = require.context('./report/03-11-21', true, /.json$/);
-const allReports = {};
+const allJsonOld = {};
 context.keys().forEach((key) => {
   const fileName = key.replace('./', '');
   const resource = require(`./report/03-11-21/${fileName}`);
   const namespace = fileName.replace('.json', '');
-  allReports[namespace] = JSON.parse(JSON.stringify(resource));
+  allJsonOld[namespace] = JSON.parse(JSON.stringify(resource));
+
 });
 
-//pull in all json files from a folder and add to allReports as an object
-const contextSrc = require.context('./report/srcset-test', true, /.json$/);
-const allReportsSrc = {};
-contextSrc.keys().forEach((key) => {
-  const fileNameSrc = key.replace('./', '');
-  const resourceSrc = require(`./report/srcset-test/${fileNameSrc}`);
-  const namespaceSrc = fileNameSrc.replace('.json', '');
-  allReportsSrc[namespaceSrc] = JSON.parse(JSON.stringify(resourceSrc));
+// pull in all json files from a folder and add to allJson as an object
+const contextNew = require.context('./report/srcset-test', true, /.json$/);
+const allJsonNew = {};
+contextNew.keys().forEach((key) => {
+  const fileNameNew = key.replace('./', '');
+  const resourceNew = require(`./report/srcset-test/${fileNameNew}`);
+  const namespaceNew = fileNameNew.replace('.json', '');
+  allJsonNew[namespaceNew] = JSON.parse(JSON.stringify(resourceNew));
 });
+class App extends React.Component {
 
-let reports = Object.entries(allReports).map(([key,value],i) => {
-  if (key !== "summary") {
-    return <Report key={i} name={key} info={value} secondReport={allReportsSrc[key]}/>
-  } else return ""
-})
+  render() {
+    return (
+      <div className="App">
+        {/* <div className="container">
+          <button>Image Reports</button>
+          <button>Lighthouse Reports List</button>
+          <div>{this.state.date}</div>
 
+        </div> */}
 
-function App() {
+        <Router>
+          <div>
+            <nav>
+              <ul>
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/report-list">Report List</Link>
+                </li>
+                <li>
+                  <Link to="/image-report">Image Report</Link>
+                </li>
+              </ul>
+            </nav>
 
-  return (
-    <div className="App">
-      <div className="container">
-
-          {reports}
+            {/* A <Switch> looks through its children <Route>s and
+                renders the first one that matches the current URL. */}
+            <Switch>
+              <Route path="/report-list">
+                <ReportsList allJsonNew={allJsonNew} allJsonOld={allJsonOld}/>
+              </Route>
+              <Route path="/image-report">
+                <ReportsContainer allJsonNew={allJsonNew} allJsonOld={allJsonOld}/>
+              </Route>
+            </Switch>
+          </div>
+        </Router>
 
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;
