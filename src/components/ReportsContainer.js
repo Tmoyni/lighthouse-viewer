@@ -8,7 +8,6 @@ class ReportsContainer extends React.Component {
   
   render() {
     let imageReports = Object.entries(this.props.allJsonOld).map(([key,value],i) => {
-      console.log(key)
       if (key !== "summary") {
         return <ImageReport key={i} name={key} info={value} secondReport={this.props.allJsonNew[key]}/>
       } else return ""

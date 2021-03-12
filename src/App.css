@@ -16,7 +16,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: black;
-  max-width: 900px;
+  /* max-width: 900px; */
 }
 
 .left {

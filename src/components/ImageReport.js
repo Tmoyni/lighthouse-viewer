@@ -1,5 +1,9 @@
 import React from 'react';
 import '../App.css';
+// import ImageTable from './ImageTable'
+import Divider from '@material-ui/core/Divider';
+import VisibilityIcon from '@material-ui/icons/Visibility';
+
 
 
 class ImageReport extends React.Component {
@@ -39,6 +43,7 @@ class ImageReport extends React.Component {
       <div className="report">
         <div className="report-left">
           <div className="report-header">
+            {/* <VisibilityIcon onClick={this.handleClick} /> */}
             <button onClick={this.handleClick}>URLs</button>
             <div className="report-header-copy">
               <h4>{this.props.name}</h4>
@@ -51,6 +56,11 @@ class ImageReport extends React.Component {
               </p>
             </div>
           </div>
+
+          {/* {this.state.isToggleOn 
+            ? <ImageTable images={this.props.info.audits['uses-responsive-images']['details']['items']} />
+            :""
+          } */}
 
           {this.state.isToggleOn 
           ? <table className="urlTable">
@@ -121,6 +131,7 @@ class ImageReport extends React.Component {
           : ""
           }
         </div>
+        <Divider/>
       </div>
     );
   }
