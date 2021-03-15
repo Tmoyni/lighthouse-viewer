@@ -24,11 +24,11 @@ context.keys().forEach((key) => {
 });
 
 // pull in all json files from a folder and add to allJson as an object
-const contextNew = require.context('./report/srcset-test', true, /.json$/);
+const contextNew = require.context('./report/03-15-21', true, /.json$/);
 const allJsonNew = {};
 contextNew.keys().forEach((key) => {
   const fileNameNew = key.replace('./', '');
-  const resourceNew = require(`./report/srcset-test/${fileNameNew}`);
+  const resourceNew = require(`./report/03-15-21/${fileNameNew}`);
   const namespaceNew = fileNameNew.replace('.json', '');
   allJsonNew[namespaceNew] = JSON.parse(JSON.stringify(resourceNew));
 });
