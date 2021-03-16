@@ -87,7 +87,13 @@ Options:
 
 
 
-Lighthouse CLI options
+### CLI options
+
+<!-- To update the help output:
+  node lighthouse-cli --help | pbcopy
+-->
+
+```
 $ lighthouse --help
 
 lighthouse <url> <options>
@@ -97,9 +103,9 @@ Logging:
   --quiet    Displays no progress, debug logs, or errors  [boolean] [default: false]
 
 Configuration:
-  --save-assets                  Save the trace contents & devtools logs to disk  [boolean] [default: false]\
-  --list-all-audits              Prints a list of all available audits and exits  [boolean] [default: false]\
-  --list-trace-categories        Prints a list of all required trace categories and exits  [boolean] [default: false]\
+  --save-assets                  Save the trace contents & devtools logs to disk  [boolean] [default: false]
+  --list-all-audits              Prints a list of all available audits and exits  [boolean] [default: false]
+  --list-trace-categories        Prints a list of all required trace categories and exits  [boolean] [default: false]
   --print-config                 Print the normalized config for the given config and options, then exit.  [boolean] [default: false]
   --additional-trace-categories  Additional categories to capture with the trace (comma-delimited).  [string]
   --config-path                  The path to the config JSON.
@@ -165,48 +171,4 @@ Examples:
   lighthouse <url> --only-categories=performance,pwa                                               Only run the specified categories. Available categories: accessibility, best-practices, performance, pwa, seo
 
 For more information on Lighthouse, see https://developers.google.com/web/tools/lighthouse/.
-Output Examples
-lighthouse
-# saves `./<HOST>_<DATE>.report.html`
-
-lighthouse --output json
-# json output sent to stdout
-
-lighthouse --output html --output-path ./report.html
-# saves `./report.html`
-
-# NOTE: specifying an output path with multiple formats ignores your specified extension for *ALL* formats
-lighthouse --output json --output html --output-path ./myfile.json
-# saves `./myfile.report.json` and `./myfile.report.html`
-
-lighthouse --output json --output html
-# saves `./<HOST>_<DATE>.report.json` and `./<HOST>_<DATE>.report.html`
-
-lighthouse --output-path=~/mydir/foo.out --save-assets
-# saves `~/mydir/foo.report.html`
-# saves `~/mydir/foo-0.trace.json` and `~/mydir/foo-0.devtoolslog.json`
-
-lighthouse --output-path=./report.json --output json
-# saves `./report.json`
-Lifecycle Examples
-You can run a subset of Lighthouse's lifecycle if desired via the --gather-mode (-G) and --audit-mode (-A) CLI flags.
-
-lighthouse http://example.com -G
-# launches browser, collects artifacts, saves them to disk (in `./latest-run/`) and quits
-
-lighthouse http://example.com -A
-# skips browser interaction, loads artifacts from disk (in `./latest-run/`), runs audits on them, generates report
-
-lighthouse http://example.com -GA
-# Normal gather + audit run, but also saves collected artifacts to disk for subsequent -A runs.
-
-
-# You can optionally provide a custom folder destination to -G/-A/-GA. Without a value, the default will be `$PWD/latest-run`.
-lighthouse -GA=./gmailartifacts https://gmail.com
-
-
-
-
-
-
-# ligthouse-viewer
+```
