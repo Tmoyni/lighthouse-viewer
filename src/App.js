@@ -49,13 +49,13 @@ class App extends React.Component {
             <nav>
               <ul>
                 <li>
-                  <Link to="/">Home</Link>
+                  <Link to="/lighthouse-viewer/">Home</Link>
                 </li>
                 <li>
-                  <Link to="/report-list">Report List</Link>
+                  <Link to="/lighthouse-viewer/report-list">Report List</Link>
                 </li>
                 <li>
-                  <Link to="/image-report">Image Report</Link>
+                  <Link to="/lighthouse-viewer/image-report">Image Report</Link>
                 </li>
               </ul>
             </nav>
@@ -63,10 +63,10 @@ class App extends React.Component {
             {/* A <Switch> looks through its children <Route>s and
                 renders the first one that matches the current URL. */}
             <Switch>
-              <Route path="/report-list">
+              <Route path="/lighthouse-viewer/report-list">
                 <ReportsList allJsonNew={allJsonNew} allJsonOld={allJsonOld}/>
               </Route>
-              <Route path="/image-report">
+              <Route path="/lighthouse-viewer/image-report">
                 <ReportsContainer allJsonNew={allJsonNew} allJsonOld={allJsonOld}/>
               </Route>
             </Switch>
