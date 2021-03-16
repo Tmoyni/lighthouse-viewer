@@ -84,6 +84,25 @@ Options:
   these with your own by passing `--chrome-flags` as extra parameters. e.g.
 
   `--params "--chrome-flags=\"--no-sandbox --disable-gpu\""`
+  
+  
+## Using the Node CLI
+
+The Node CLI provides the most flexibility in how Lighthouse runs can be configured and reported. Users who want more advanced usage, or want to run Lighthouse in an automated fashion should use the Node CLI.
+
+_Lighthouse requires Node 12 LTS (12.x) or later._
+
+**Installation**:
+
+```sh
+npm install -g lighthouse
+# or use yarn:
+# yarn global add lighthouse
+```
+
+**Run it**: `lighthouse https://airhorner.com/`
+
+By default, Lighthouse writes the report to an HTML file. You can control the output format by passing flags.
 
 
 
