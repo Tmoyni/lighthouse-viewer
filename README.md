@@ -85,6 +85,7 @@ Options:
 
   `--params "--chrome-flags=\"--no-sandbox --disable-gpu\""`
   
+## Lighthouse CLI
   
 ## Using the Node CLI
 
